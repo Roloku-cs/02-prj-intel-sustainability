@@ -9,10 +9,10 @@
 <body>
 
   <!-- Header / Hero Section -->
-  <header>
-    <div>
+  <header class="hero">
+    <div class="hero-content">
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+      <img src="img/intel-header-logo.svg" alt="Intel Logo" class="logo" />
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
@@ -28,14 +28,14 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline">
 
     <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">1968</h2>
+      <h3 class="title">Intel Founded</h3>
+      <img src="img/1968.png" alt="Intel Founded 1968" class="milestone-image">
+      <p class="description">
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
         decades of technological innovation.
@@ -43,11 +43,11 @@
     </div>
 
     <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">1971</h2>
+      <h3 class="title">First Microprocessor</h3>
+      <img src="img/1971.png" alt="First Microprocessor 1971" class="milestone-image">
+      <p class="description">
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
         of computing devices.
@@ -55,22 +55,22 @@
     </div>
 
     <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">1978</h2>
+      <h3 class="title">8086 Processor</h3>
+      <img src="img/1978.png" alt="8086 Processor 1978" class="milestone-image">
+      <p class="description">
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
       </p>
     </div>
 
     <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">1985</h2>
+      <h3 class="title">386 Processor</h3>
+      <img src="img/1985.png" alt="386 Processor 1985" class="milestone-image">
+      <p class="description">
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
         personal computers.
@@ -78,11 +78,11 @@
     </div>
 
     <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">2006</h2>
+      <h3 class="title">Peak GHG Emissions</h3>
+      <img src="img/2006.png" alt="Peak GHG Emissions 2006" class="milestone-image">
+      <p class="description">
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
         chemical abatement, renewable energy, and energy-efficient 
@@ -91,11 +91,11 @@
     </div>
 
     <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">2020</h2>
+      <h3 class="title">RISE Strategy</h3>
+      <img src="img/2020.png" alt="RISE Strategy 2020" class="milestone-image">
+      <p class="description">
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
         progress on climate action, water stewardship, and waste reduction.
@@ -103,11 +103,11 @@
     </div>
 
     <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">2022</h2>
+      <h3 class="title">Net-Zero By 2040</h3>
+      <img src="img/2022.png" alt="Net-Zero By 2040 2022" class="milestone-image">
+      <p class="description">
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
         by 2040, building on years of environmental initiatives.
@@ -115,11 +115,11 @@
     </div>
 
     <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">2023</h2>
+      <h3 class="title">Renewable Electricity</h3>
+      <img src="img/2023.png" alt="Renewable Electricity 2023" class="milestone-image">
+      <p class="description">
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
         toward Intel's long-term sustainability goals.
@@ -127,17 +127,85 @@
     </div>
 
     <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
+    <div class="milestone-card">
+      <h2 class="year">2024</h2>
+      <h3 class="title">Sustainability Summit</h3>
+      <img src="img/2024.png" alt="Sustainability Summit 2024" class="milestone-image">
+      <p class="description">
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
         next-generation sustainable semiconductor manufacturing.
       </p>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <p class="hint-text">Scroll to view timeline | Hover over cards to learn more! (Tap cards on mobile)</p>
+
+  <!-- JavaScript to enable horizontal scrolling with mouse wheel -->
+  <script>
+    // Get the timeline element
+    const timeline = document.querySelector('.timeline');
+
+    // Variables for smooth scrolling
+    let isScrolling = false;
+    let targetScrollLeft = timeline.scrollLeft;
+    let currentScrollLeft = timeline.scrollLeft;
+
+    // Add event listener for mouse wheel
+    timeline.addEventListener('wheel', function(event) {
+      // Prevent the default vertical scroll
+      event.preventDefault();
+      
+      // Add the scroll amount to the target position (stacking inputs)
+      // Multiply by 2 for faster scrolling
+      targetScrollLeft += event.deltaY * 2;
+      
+      // Keep target within valid scroll bounds
+      const maxScroll = timeline.scrollWidth - timeline.clientWidth;
+      targetScrollLeft = Math.max(0, Math.min(targetScrollLeft, maxScroll));
+      
+      // Start the smooth scroll animation if not already running
+      if (!isScrolling) {
+        isScrolling = true;
+        smoothScroll();
+      }
+    });
+
+    // Smooth scroll animation function
+    function smoothScroll() {
+      // Calculate the difference between current and target position
+      const difference = targetScrollLeft - currentScrollLeft;
+      
+      // If we're close enough to the target, stop animating
+      if (Math.abs(difference) < 0.5) {
+        currentScrollLeft = targetScrollLeft;
+        timeline.scrollLeft = currentScrollLeft;
+        isScrolling = false;
+        return;
+      }
+      
+      // Move a portion of the way to the target (easing effect)
+      // 0.15 controls the smoothness - lower is smoother but slower
+      currentScrollLeft += difference * 0.15;
+      timeline.scrollLeft = currentScrollLeft;
+      
+      // Continue the animation on the next frame
+      requestAnimationFrame(smoothScroll);
+    }
+
+    // Handle card clicks on mobile screens to show/hide information
+    // Get all milestone cards
+    const cards = document.querySelectorAll('.milestone-card');
+    
+    // Add click event listener to each card
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        // Only activate click behavior on small screens (768px or less)
+        if (window.innerWidth <= 768) {
+          // Toggle the 'active' class to show/hide card information
+          this.classList.toggle('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

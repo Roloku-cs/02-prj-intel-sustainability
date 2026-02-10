@@ -1,1 +1,316 @@
-/* Add your CSS here */
+/* Reset default browser styles for consistent look across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set overall page styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ===== HEADER STYLES ===== */
+/* Style the hero section at the top of the page */
+.hero {
+  background-color: #0071c5; /* Intel blue */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Center and constrain the hero content */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Resize the Intel logo */
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Style the main heading */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Style the hero description text */
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== TIMELINE STYLES ===== */
+/* Container for the timeline - uses Flexbox for horizontal scrolling on large screens */
+.timeline {
+  display: flex; /* Use Flexbox to arrange cards in a row */
+  gap: 30px; /* Space between cards */
+  padding: 40px 20px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden;
+  max-width: 100%;
+  /* Smooth scrolling handled by JavaScript for better control */
+}
+
+/* Customize the scrollbar for webkit browsers */
+.timeline::-webkit-scrollbar {
+  height: 10px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: #0071c5; /* Intel blue */
+  border-radius: 5px;
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+  background: #005a9c; /* Darker blue on hover */
+}
+
+/* ===== MILESTONE CARD STYLES ===== */
+/* Style each milestone card */
+.milestone-card {
+  background-color: white;
+  border-radius: 10px; /* Rounded corners */
+  padding: 25px;
+  min-width: 280px; /* Minimum width for each card */
+  max-width: 320px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card hover effect - lift the card */
+.milestone-card:hover {
+  transform: translateY(-10px); /* Move card up slightly */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Style the year */
+.year {
+  font-size: 2rem;
+  color: #0071c5; /* Intel blue */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style the milestone title */
+.title {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Style the milestone image */
+.milestone-image {
+  width: 100%; /* Full width of card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 15px;
+  display: block; /* Remove inline spacing */
+  max-height: 0; /* Hidden by default on desktop */
+  opacity: 0; /* Transparent by default */
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth reveal */
+}
+
+/* Style the description - hidden by default, shown on hover */
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  max-height: 0; /* Hidden by default */
+  opacity: 0; /* Transparent by default */
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* Smooth reveal */
+}
+
+/* Show description on card hover */
+.milestone-card:hover .milestone-image {
+  max-height: 200px; /* Show image */
+  opacity: 1; /* Make visible */
+  margin-bottom: 15px;
+}
+
+.milestone-card:hover .description {
+  max-height: 300px; /* Show description */
+  opacity: 1; /* Make visible */
+  margin-top: 10px;
+}
+
+/* ===== HINT TEXT STYLES ===== */
+/* Style the hint text at the bottom */
+.hint-text {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+/* Stack cards vertically on smaller screens (tablets and phones) */
+@media (max-width: 768px) {
+  /* Change timeline to vertical layout */
+  .timeline {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards */
+    overflow-x: visible; /* No horizontal scroll needed */
+    gap: 20px;
+  }
+
+  /* Make cards full width on mobile */
+  .milestone-card {
+    min-width: 0; /* Override base 280px minimum */
+    max-width: 500px;
+    width: 100px; /* Compressed width when not active */
+    max-height: 64px; /* Compressed height when not active - use max-height for animation */
+    cursor: pointer; /* Show it's clickable */
+    padding: 20px 10px; /* Compress horizontal padding when not active */
+    /* When closing: height closes first (0.5s duration, 0s delay), then width closes (0.5s duration, 0.5s delay) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, padding 0.4s ease, max-height 0.5s ease 0s, max-width 0.5s ease 0.5s, width 0.5s ease 0.5s;
+  }
+
+  /* Center the year in the card - make it smaller when card is not active */
+  .year {
+    text-align: center;
+    font-size: 1.3rem; /* Smaller when not active */
+    max-width: 100px; /* Compressed width when not active */
+    overflow: hidden;
+    margin: 0 auto;
+    transition: font-size 0.3s ease, max-width 0.4s ease; /* Smooth size transition */
+  }
+
+  .milestone-image {
+    max-width: 100px;
+    height: auto;
+  }
+
+  /* Disable hover effects on mobile */
+  .milestone-card:hover {
+    transform: none; /* Remove hover lift effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Keep default shadow */
+  }
+
+  .milestone-card:hover .milestone-image {
+    max-height: 0; /* Keep image hidden on hover */
+    opacity: 0;
+    margin-bottom: 0;
+  }
+
+  .milestone-card:hover .description {
+    max-height: 0; /* Keep description hidden on hover */
+    opacity: 0;
+    margin-top: 0;
+  }
+
+  /* Hide title and description by default on mobile - only show year */
+  .title {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-bottom 0.3s ease;
+  }
+
+  .milestone-image {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-bottom 0.3s ease;
+  }
+
+  .description {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.3s ease;
+  }
+
+  /* Show title and description when card is clicked (active) */
+  .milestone-card.active .title {
+    max-height: 200px;
+    opacity: 1;
+    margin-bottom: 15px;
+  }
+
+  .milestone-card.active .milestone-image {
+    max-height: 200px; /* Allow image to show */
+    opacity: 1;
+    margin-bottom: 15px;
+  }
+
+  .milestone-card.active .description {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  /* Add visual feedback for active cards */
+  .milestone-card.active {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 25px; /* Expand to full padding when active */
+    max-width: 500px; /* Expand to full width when active */
+    width: calc(100vw - 40px); /* Full viewport width minus padding, adapts to screen size */
+    max-height: 1000px; /* Expanded height when active - use max-height for animation */
+    /* When opening: both expand simultaneously with 0s delay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, padding 0.4s ease, max-height 0.5s ease 0s, max-width 0.5s ease 0s, width 0.5s ease 0s;
+  }
+
+  /* Make year text larger when card is active */
+  .milestone-card.active .year {
+    font-size: 2rem; /* Expand to full size when active */
+    max-width: none; /* Remove width restriction when active */
+  }
+
+  /* Adjust hero text size for mobile */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Smaller logo on mobile */
+  .logo {
+    width: 120px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .year {
+    font-size: 1.1rem; /* Even smaller on extra small screens when not active */
+    text-align: center; /* Center the year on extra small screens */
+  }
+
+  .milestone-card.active .year {
+    font-size: 1.5rem; /* Expand when active on small screens */
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+}
